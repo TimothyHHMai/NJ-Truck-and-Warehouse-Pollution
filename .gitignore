@@ -1,0 +1,14 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment
+.venv/
+
+# Large raw data (imagery etc.); rebuild with scripts/download/
+data/raw/
+
+# osmnx request cache
+cache/
+
+# Data download scripts
+scripts/download/

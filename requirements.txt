@@ -1,0 +1,8 @@
+earthengine-api
+geemap
+geopandas
+osmnx
+pandas
+pyogrio
+rasterio
+requests
