@@ -1,6 +1,7 @@
 earthengine-api
 geemap
 geopandas
+openpyxl
 osmnx
 pandas
 pyogrio

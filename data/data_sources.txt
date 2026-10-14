@@ -10,6 +10,7 @@ EPA FAQSD daily PM2.5 by census tract: https://www.epa.gov/hesc/rsig-related-dow
 Satellite-derived PM2.5, ACAG V6.GL (~1 km): https://sites.wustl.edu/acag/datasets/surface-pm2-5/
 Asthma ER visits (NJSHAD): https://www-doh.nj.gov/doh-shad/
 Census ACS 5-year: https://api.census.gov/data/2024/acs/acs5
+Census county population estimates: https://www2.census.gov/programs-surveys/popest/datasets/
 Census tract boundaries (TIGER): https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_34_tract.zip
 NJDEP Overburdened Communities: https://services1.arcgis.com/QWdNfRs7lkPq4g4Q/arcgis/rest/services/Overburdened_Communities_under_the_New_Jersey_Environmental_Justice_Law/FeatureServer/19
 EJScreen 2.3 (archived): https://doi.org/10.7910/DVN/RLR5AX

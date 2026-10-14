@@ -20,6 +20,7 @@ All sources are free and public.
 | Satellite-derived PM2.5, ACAG V6.GL (~1 km) | https://sites.wustl.edu/acag/datasets/surface-pm2-5/ |
 | Asthma ER visits (NJSHAD) | https://www-doh.nj.gov/doh-shad/ |
 | Census ACS 5-year | https://api.census.gov/data/2024/acs/acs5 |
+| Census county population estimates | https://www2.census.gov/programs-surveys/popest/datasets/ |
 | Census tract boundaries (TIGER) | https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_34_tract.zip |
 | NJDEP Overburdened Communities | https://services1.arcgis.com/QWdNfRs7lkPq4g4Q/arcgis/rest/services/Overburdened_Communities_under_the_New_Jersey_Environmental_Justice_Law/FeatureServer/19 |
 | EJScreen 2.3 (archived after EPA took it offline in Feb 2025) | https://doi.org/10.7910/DVN/RLR5AX |
@@ -30,7 +31,7 @@ The code in this repository is released under the [MIT License](LICENSE).
 
 The data is not covered by the MIT License; each source keeps its own terms:
 
-- **Public domain (U.S. federal government):** NAIP, Census ACS and TIGER, EPA AQS, EPA FAQSD, EPA EJScreen, FHWA HPMS.
+- **Public domain (U.S. federal government):** NAIP, Census ACS, TIGER, and population estimates; EPA AQS, FAQSD, and EJScreen; FHWA HPMS.
 - **OpenStreetMap and Microsoft Building Footprints:** [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Any published dataset derived from them, including this project's warehouse inventory, is released under the ODbL.
 - **ACAG satellite PM2.5:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 - **Sentinel-5P TROPOMI:** free and open under the Copernicus data policy, with attribution.
