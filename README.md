@@ -23,3 +23,22 @@ All sources are free and public.
 | Census tract boundaries (TIGER) | https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_34_tract.zip |
 | NJDEP Overburdened Communities | https://services1.arcgis.com/QWdNfRs7lkPq4g4Q/arcgis/rest/services/Overburdened_Communities_under_the_New_Jersey_Environmental_Justice_Law/FeatureServer/19 |
 | EJScreen 2.3 (archived after EPA took it offline in Feb 2025) | https://doi.org/10.7910/DVN/RLR5AX |
+
+## License
+
+The code in this repository is released under the [MIT License](LICENSE).
+
+The data is not covered by the MIT License; each source keeps its own terms:
+
+- **Public domain (U.S. federal government):** NAIP, Census ACS and TIGER, EPA AQS, EPA FAQSD, EPA EJScreen, FHWA HPMS.
+- **OpenStreetMap and Microsoft Building Footprints:** [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Any published dataset derived from them, including this project's warehouse inventory, is released under the ODbL.
+- **ACAG satellite PM2.5:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- **Sentinel-5P TROPOMI:** free and open under the Copernicus data policy, with attribution.
+- **New Jersey state data (NJOGIS, NJDEP, NJSHAD):** used under each agency's public data terms; the State of New Jersey does not endorse this project.
+
+### Attribution
+
+- Map data © OpenStreetMap contributors, available under the ODbL.
+- Building footprints © Microsoft, available under the ODbL.
+- Contains modified Copernicus Sentinel data, processed by ESA and the European Commission.
+- Surface PM2.5: Atmospheric Composition Analysis Group, Washington University in St. Louis (SatPM2.5 V6.GL).
