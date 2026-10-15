@@ -1,8 +1,8 @@
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Virtual environment
-.venv/
+# Virtual environments (.venv, .venv-labelstudio)
+.venv*/
 
 # Large raw data (imagery etc.); rebuild with scripts/download/
 data/raw/
@@ -12,3 +12,9 @@ cache/
 
 # Data download scripts
 scripts/download/
+
+# Labeling image chips (rebuild with notebooks/03_labeling_dataset.ipynb)
+data/interim/chips/*/
+
+# Label Studio database (annotations live here; export to data/interim/labels)
+labeling/label-studio-data/
