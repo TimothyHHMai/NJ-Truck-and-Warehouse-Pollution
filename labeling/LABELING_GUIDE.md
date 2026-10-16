@@ -19,18 +19,22 @@ Label it even if it is cut off by the chip edge (trace to the edge).
 
 Can't tell? Label it and tick **uncertain**.
 
-## truck_trailer (box, hotkey `t`) — 2019 and 2022 chips only
+## truck_trailer (polygon, hotkey `t`) — 2019 and 2022 chips only
 
-One box per **semi-trailer**: a long box (~16 m, about 25 px at 60 cm), with or without a tractor attached. If a tractor is attached, box trailer and tractor together.
+One polygon per **semi-trailer**: a long box (~16 m, about 25 px at 60 cm), with or without a tractor attached. If a tractor is attached, outline trailer and tractor together.
 
 - Include: trailers at dock doors, in yards, on roads; shipping containers **on a chassis**.
 - Do not include: box trucks and vans, cars, stacked shipping containers on the ground, rail cars.
 - Partly outside the chip: label it if at least half is visible.
-- Trailers packed side by side: still one box each; boxes may touch.
+- Trailers packed side by side: still one polygon each; polygons may touch.
 
-## loading_dock (box, hotkey `d`) — 2019 and 2022 chips only
+## loading_dock (polygon, hotkey `d`) — 2019 and 2022 chips only
 
-One box per **continuous row of dock doors** along a wall (not one box per door). A gap of several empty door widths, or a change of wall, starts a new box. Box the strip of wall where the doors are; trailers backed into the doors may fall inside the box.
+One polygon per **continuous row of dock doors** along a wall (not one per door). A gap of several empty door widths, or a change of wall, starts a new polygon. Outline the strip of wall where the doors are; trailers backed into the doors may fall inside it.
+
+## Drawing trailers and docks
+
+Both are drawn as **4-corner polygons**, not axis-aligned boxes, because many buildings and trailers sit at an angle in the chip. Click the four corners in order around the object, following its own edges, so the shape is a rotated rectangle that hugs it. Close the polygon by clicking the first point again. Use exactly 4 points; they are converted to oriented boxes for training.
 
 ## 2010 and 2015 chips (1 m)
 

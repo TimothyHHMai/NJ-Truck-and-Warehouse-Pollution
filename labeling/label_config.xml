@@ -6,11 +6,11 @@
     <Label value="warehouse_roof" background="#E8A33D" hotkey="w"/>
   </PolygonLabels>
 
-  <!-- Trailers and docks: boxes (YOLO detector, Month 4). Only on 2019 and 2022 chips. -->
-  <RectangleLabels name="objects" toName="image" strokeWidth="2" opacity="0.25">
+  <!-- Trailers and docks: 4-corner polygons so angled ones fit tightly (oriented-box detector, Month 4). Only on 2019 and 2022 chips. -->
+  <PolygonLabels name="objects" toName="image" strokeWidth="2" pointSize="small" opacity="0.25">
     <Label value="truck_trailer" background="#3D7EE8" hotkey="t"/>
     <Label value="loading_dock" background="#2FB37A" hotkey="d"/>
-  </RectangleLabels>
+  </PolygonLabels>
 
   <!-- Chip-level flags for review -->
   <Choices name="flags" toName="image" choice="multiple" showInline="true">

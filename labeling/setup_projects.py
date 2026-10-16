@@ -3,7 +3,7 @@
 Each project gets the label config (label_config.xml), the labeling guide as its
 instructions, and a local-files storage pointing at data/interim/chips/<split>/,
 which is synced so every chip becomes a task. Safe to re-run: existing projects
-are left alone.
+only get their label config and instructions refreshed.
 
 Requires Label Studio to be running (./labeling/start_label_studio.sh).
 
@@ -42,7 +42,9 @@ def main():
 
     for split, title in PROJECTS.items():
         if title in existing:
-            print(f"{title}: already exists (id {existing[title]['id']}), skipped")
+            pid = existing[title]["id"]
+            api("PATCH", f"/projects/{pid}", json={"label_config": config, "expert_instruction": guide})
+            print(f"{title}: already exists (id {pid}), label config and guide updated")
             continue
         project = api("POST", "/projects", json={
             "title": title,
