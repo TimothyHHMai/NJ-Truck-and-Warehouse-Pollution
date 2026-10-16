@@ -4,14 +4,14 @@
 # Virtual environments (.venv, .venv-labelstudio)
 .venv*/
 
-# Large raw data (imagery etc.); rebuild with scripts/download/
+# Large raw data (imagery etc.); rebuild with personal/download/
 data/raw/
 
 # osmnx request cache
 cache/
 
-# Data download scripts
-scripts/download/
+# Personal folder (download scripts, project plan); not tracked
+personal/
 
 # Labeling image chips (rebuild with notebooks/03_labeling_dataset.ipynb)
 data/interim/chips/*/
