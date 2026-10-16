@@ -8,7 +8,7 @@ Manually labeling the training data
 
 ## Data sources
 
-All sources are free and public.
+All sources are free and public. (10/19/26)
 
 | Data | Source |
 |---|---|
