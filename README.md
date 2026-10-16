@@ -31,9 +31,8 @@ All sources are free and public. (10/19/26)
 
 ## License
 
-The code in this repository is released under the [MIT License](LICENSE).
 
-The data is not covered by the MIT License; each source keeps its own terms:
+Each source keeps its own terms:
 
 - **Public domain (U.S. federal government):** NAIP, Census ACS, TIGER, and population estimates; EPA AQS, FAQSD, and EJScreen; FHWA HPMS.
 - **OpenStreetMap and Microsoft Building Footprints:** [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/). Any published dataset derived from them, including this project's warehouse inventory, is released under the ODbL.
