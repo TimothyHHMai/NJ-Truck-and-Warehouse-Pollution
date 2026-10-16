@@ -1,6 +1,6 @@
 # NJ Warehouse Sprawl and Truck Pollution
 
-About one in three New Jersey residents lives within half a mile of a large warehouse, yet warehouses fall outside the state's Environmental Justice Law. This project maps where warehouses have grown along the NJ Turnpike corridor (Middlesex, Union, and Essex counties) using aerial imagery from 2010 onward, estimates how busy they are by counting truck trailers and loading docks with computer vision, and tests whether that activity is associated with higher NO2 and PM2.5 and with asthma ER visits in nearby neighborhoods, especially overburdened communities. The end product is an open, interactive map where anyone can look up a town and see nearby warehouse growth, truck activity, and air quality.
+This project maps where warehouses have grown along the NJ Turnpike corridor (Middlesex, Union, and Essex counties) using aerial imagery from 2010 onward, estimates how busy they are by counting truck trailers and loading docks with computer vision, and tests whether that activity is associated with higher NO2 and PM2.5 and with asthma ER visits in nearby neighborhoods, especially overburdened communities.
 
 ## Current status
 
