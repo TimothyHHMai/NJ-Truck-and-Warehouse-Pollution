@@ -4,7 +4,7 @@ This project maps where warehouses have grown along the NJ Turnpike corridor (Mi
 
 ## Current status
 
-**Manually labeling the training data.** They are now being hand-labeled in Label Studio for warehouse roofs, truck trailers, and loading docks, following the rules in [labeling/LABELING_GUIDE.md](labeling/LABELING_GUIDE.md). These labels will train and evaluate the warehouse and trailer detection models.
+Manually labeling the training data
 
 ## Data sources
 
