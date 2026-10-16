@@ -29,8 +29,7 @@ All sources are free and public. (10/19/26)
 | NJDEP Overburdened Communities | https://services1.arcgis.com/QWdNfRs7lkPq4g4Q/arcgis/rest/services/Overburdened_Communities_under_the_New_Jersey_Environmental_Justice_Law/FeatureServer/19 |
 | EJScreen 2.3 (archived after EPA took it offline in Feb 2025) | https://doi.org/10.7910/DVN/RLR5AX |
 
-## License
-
+## Data licenses
 
 Each source keeps its own terms:
 
