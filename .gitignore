@@ -10,7 +10,7 @@ data/raw/
 # osmnx request cache
 cache/
 
-# Personal folder (download scripts, project plan); not tracked
+# Personal folder
 personal/
 
 # Labeling image chips (rebuild with notebooks/03_labeling_dataset.ipynb)
