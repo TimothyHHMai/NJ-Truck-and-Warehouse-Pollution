@@ -18,7 +18,8 @@ import requests
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-CHIP_DIR = ROOT / "data" / "interim" / "chips"
+DATA = Path("/Volumes/01-2TB/NJ-Truck-and-Warhouse-Pollution/data")  # external SSD
+CHIP_DIR = DATA / "interim" / "chips"
 URL = "http://localhost:8080"
 TOKEN = (HERE / "label-studio-data" / ".api_token").read_text().strip()
 HEADERS = {"Authorization": f"Token {TOKEN}"}
