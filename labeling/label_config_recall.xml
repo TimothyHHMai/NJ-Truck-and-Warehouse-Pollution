@@ -1,0 +1,14 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false" brightnessControl="true"/>
+
+  <!-- One click per error: warehouses the inventory missed, and outlined buildings that aren't warehouses (recall) -->
+  <KeyPointLabels name="errors" toName="image" strokeWidth="2" pointSize="medium">
+    <Label value="missed_warehouse" background="#E8443D" hotkey="m"/>
+    <Label value="not_warehouse" background="#3D7EE8" hotkey="x"/>
+  </KeyPointLabels>
+
+  <Choices name="flags" toName="image" choice="multiple" showInline="true">
+    <Choice value="uncertain" hint="At least one click is a judgement call; review later"/>
+    <Choice value="unusable" hint="Clouds, blur, or missing imagery"/>
+  </Choices>
+</View>

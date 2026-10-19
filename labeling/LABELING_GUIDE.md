@@ -1,54 +1,58 @@
 # Labeling Guide
 
-Rules for labeling the NAIP chips in `data/interim/chips/`. Apply them the same way to every chip, train and validation alike. When a case isn't covered here, decide, add the rule below, and keep applying it.
+Rules for checking the validation images in `data/interim/chips/{precision,recall,sites}/`, built by `notebooks/03_labeling_dataset.ipynb`. Nothing here is training data: these labels only measure how good the warehouse inventory and the trailer counts are. Apply the rules the same way to every image. When a case isn't covered here, decide, add the rule below, and keep applying it.
 
-Chip file names start with the imagery year: `2022_c01234.png`. **2019 and 2022** chips are 60 cm per pixel; **2010 and 2015** chips are 1 m.
+## What counts as a warehouse
 
-## warehouse_roof (polygon, hotkey `w`)
-
-Trace the roof outline of every **warehouse or distribution center** in the chip, including ones that are not the chip's centre building.
-
-A warehouse usually has:
+A warehouse or distribution center usually has:
 - a large, flat, plain roof (often white or grey)
 - a row of loading docks along at least one wall
 - a truck yard or trailer parking beside the docks
 
-Label it even if it is cut off by the chip edge (trace to the edge).
+**Not warehouses:** big-box stores and malls (customer car parking, entrances, no truck yard), factories and plants (stacks, tanks, piping, complex roofs), offices, schools, hospitals, aircraft hangars, parking garages, apartment blocks.
 
-**Do not label:** big-box stores and malls (customer car parking, entrances, no truck yard), factories and plants (stacks, tanks, piping, complex roofs), offices, schools, hospitals, aircraft hangars, parking garages, apartment blocks.
+Mixed buildings (e.g. a plant with a warehouse wing) count as a warehouse if the docks and truck yard are a major part of the site.
 
-Can't tell? Label it and tick **uncertain**.
+## 1. Precision: "NJ validation: warehouse precision"
 
-## truck_trailer (polygon, hotkey `t`) — 2019 and 2022 chips only
+100 images (2022, 60 cm), one inventory building each, outlined in yellow. Pick one answer for **the outlined building only**:
+- **warehouse** (`1`)
+- **not_warehouse** (`2`)
+- **unsure** (`3`): use sparingly; these get a second look.
 
-One polygon per **semi-trailer**: a long box (~16 m, about 25 px at 60 cm), with or without a tractor attached. If a tractor is attached, outline trailer and tractor together.
+If the outline only covers part of a building, judge the building it's on.
 
+## 2. Recall: "NJ validation: warehouse recall"
+
+20 images, each a 1 km × 1 km cell (2022, 60 cm). Every inventory building is outlined in yellow. Scan the whole cell and place one point on each:
+- **missed_warehouse** (`m`): a warehouse that is **not** outlined, with its centre inside the image. Count only warehouses about 50,000 sq ft (4,650 m²) or larger, roughly 70 × 70 m or ~115 × 115 px.
+- **not_warehouse** (`x`): an outlined building that is **not** a warehouse, again only if its centre is inside the image.
+
+Buildings cut off at the image edge: click only those whose centre is inside (roughly, more than half visible), so each building belongs to exactly one cell.
+
+A cell with nothing to click (common in the `other` cells, r13 to r20) is still submitted, with no points.
+
+## 3. Trailer counts: "NJ validation: dock-yard trailer counts"
+
+70 tiles named `<year>_<site>.png`, e.g. `2019_s20.png`. Each site has a 2022 tile, and 30 sites also have one extra tile: an older one (2019, 2015 or 2010) or a 2023 one at 30 cm. The tile covers the same ground in every year. Label all of a site's tiles in one sitting so you judge them consistently.
+
+Place one **trailer** point (`t`) on the centre of every semi-trailer **anywhere in the tile**, not only at the main building: a long box about 16 m long (53 px at 30 cm, 27 px at 60 cm, 16 px at 1 m), with or without a tractor attached (attached tractor and trailer = one point).
 - Include: trailers at dock doors, in yards, on roads; shipping containers **on a chassis**.
-- Do not include: box trucks and vans, cars, stacked shipping containers on the ground, rail cars.
-- Partly outside the chip: label it if at least half is visible.
-- Trailers packed side by side: still one polygon each; polygons may touch.
+- Do not include: box trucks and vans, cars, stacked containers on the ground, rail cars.
+- At the tile edge: count it if at least half is visible.
 
-## loading_dock (polygon, hotkey `d`) — 2019 and 2022 chips only
+**skip_site**: if the 2022 tile has no truck yard (no dock doors or trailer parking), tick it and move on. Skip that site's older tile too. A real yard that happens to be empty that day is **not** skipped: submit it with zero points. Aim for ~30 kept sites.
 
-One polygon per **continuous row of dock doors** along a wall (not one per door). A gap of several empty door widths, or a change of wall, starts a new polygon. Outline the strip of wall where the doors are; trailers backed into the doors may fall inside it.
-
-## Drawing trailers and docks
-
-Both are drawn as **4-corner polygons**, not axis-aligned boxes, because many buildings and trailers sit at an angle in the chip. Click the four corners in order around the object, following its own edges, so the shape is a rotated rectangle that hugs it. Close the polygon by clicking the first point again. Use exactly 4 points; they are converted to oriented boxes for training.
-
-## 2010 and 2015 chips (1 m)
-
-Label **warehouse_roof only**. Trailers and docks are too small to label reliably at 1 m.
+**1 m years (2010, 2015):** trailers are ~3 px wide. Count what you can, and tick **uncertain** if a lot of it is guesswork. Seeing how much worse 1 m counts are is part of the point.
 
 ## Flags
 
-- **uncertain**: at least one label is a judgement call. These get a second look before training.
-- **unusable**: clouds, blur or missing imagery. Submit the chip with no labels.
-
-A chip with nothing to label (common for negative chips, named `..._neg...`) is still submitted, with no labels. Empty chips teach the model what *not* to detect.
+- **uncertain**: at least one label is a judgement call. These get a second look.
+- **unusable**: clouds, blur or missing imagery. Submit with no labels.
 
 ## Workflow
 
 1. Start Label Studio: `./labeling/start_label_studio.sh`, then open http://localhost:8080
-2. Label the **train** project and the **val** project the same way. Never copy labels between them.
-3. Export regularly (Project → Export → JSON) to `data/interim/labels/`. The Label Studio database is not in git.
+2. First time only: `.venv-labelstudio/bin/python labeling/setup_projects.py` creates the three projects.
+3. Export each project regularly (Project → Export → JSON) to `data/interim/labels/`. The Label Studio database is not in git.
+4. File names and `index.csv` in each image folder link every image to its building, cell or site, and to the pixel-to-map transform.

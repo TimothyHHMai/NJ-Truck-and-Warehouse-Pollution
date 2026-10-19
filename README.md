@@ -1,10 +1,10 @@
 # NJ Warehouse Sprawl and Truck Pollution
 
-This project maps where warehouses have grown along the NJ Turnpike corridor (Middlesex, Union, and Essex counties) using aerial imagery from 2010 onward, estimates how busy they are by counting truck trailers and loading docks with computer vision, and tests whether that activity is associated with higher NO2 and PM2.5 and with asthma ER visits in nearby neighborhoods, especially overburdened communities.
+This project maps where warehouses have grown along the NJ Turnpike corridor (Middlesex, Union, and Essex counties) using building footprints, parcel data, and aerial imagery from 2010 onward, estimates how busy they are by counting truck trailers with computer vision, and tests whether that activity is associated with higher NO2 and PM2.5 and with asthma ER visits in nearby neighborhoods, especially overburdened communities.
 
 ## Current status
 
-Manually labeling the training data
+Building a small validation set: busy dock-yard tiles for checking trailer counts, and NAIP spot checks of the warehouse inventory built from building footprints on industrial parcels
 
 ## Data sources
 

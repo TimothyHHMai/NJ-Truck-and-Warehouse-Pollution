@@ -1,0 +1,14 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false" brightnessControl="true"/>
+
+  <!-- Is the building outlined in yellow a warehouse? One answer per image (precision of the inventory) -->
+  <Choices name="verdict" toName="image" choice="single-radio" required="true" showInline="true">
+    <Choice value="warehouse" hotkey="1"/>
+    <Choice value="not_warehouse" hotkey="2"/>
+    <Choice value="unsure" hotkey="3"/>
+  </Choices>
+
+  <Choices name="flags" toName="image" choice="multiple" showInline="true">
+    <Choice value="unusable" hint="Clouds, blur, or missing imagery"/>
+  </Choices>
+</View>

@@ -13,7 +13,7 @@ cache/
 # Personal folder
 personal/
 
-# Labeling image chips (rebuild with notebooks/03_labeling_dataset.ipynb)
+# Labeling images (rebuild with notebooks/03_labeling_dataset.ipynb)
 data/interim/chips/*/
 
 # Label Studio database (annotations live here; export to data/interim/labels)

@@ -1,0 +1,14 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false" brightnessControl="true"/>
+
+  <!-- One click per truck trailer anywhere in the tile; the count is the number of clicks -->
+  <KeyPointLabels name="trailers" toName="image" strokeWidth="2" pointSize="small">
+    <Label value="trailer" background="#E8A33D" hotkey="t"/>
+  </KeyPointLabels>
+
+  <Choices name="flags" toName="image" choice="multiple" showInline="true">
+    <Choice value="skip_site" hint="No truck yard here (2022 tile); drop this site in every year"/>
+    <Choice value="uncertain" hint="Several trailers are judgement calls; review later"/>
+    <Choice value="unusable" hint="Clouds, blur, or missing imagery"/>
+  </Choices>
+</View>

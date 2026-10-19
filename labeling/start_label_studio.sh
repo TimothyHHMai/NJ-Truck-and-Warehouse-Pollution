@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Start Label Studio locally for labeling the NAIP chips.
+# Start Label Studio locally for labeling the NAIP validation images.
 # Usage (from anywhere): ./labeling/start_label_studio.sh   then open http://localhost:8080
 # Stop with Ctrl+C. Labels are stored in labeling/label-studio-data/ (gitignored; export regularly).
 
