@@ -37,7 +37,7 @@ A cell with nothing to click (common in the `other` cells, r13 to r20) is still 
 70 tiles named `<year>_<site>.png`, e.g. `2019_s20.png`. Each site has a 2022 tile, and 30 sites also have one extra tile: an older one (2019, 2015 or 2010) or a 2023 one at 30 cm. The tile covers the same ground in every year. Label all of a site's tiles in one sitting so you judge them consistently.
 
 Place one **trailer** point (`t`) on the centre of every semi-trailer **anywhere in the tile**, not only at the main building: a long box about 16 m long (53 px at 30 cm, 27 px at 60 cm, 16 px at 1 m), with or without a tractor attached (attached tractor and trailer = one point).
-- Include: trailers at dock doors, in yards, on roads; shipping containers **on a chassis**.
+- Include: trailers at dock doors, in yards, on roads; shipping containers **on a chassis**; flatbeds (empty or loaded), tankers, car carriers and other open trailers of semi-trailer length. An empty flatbed is a thin deck: count it only if you can make out its outline.
 - Do not include: box trucks and vans, cars, stacked containers on the ground, rail cars.
 - At the tile edge: count it if at least half is visible.
 
