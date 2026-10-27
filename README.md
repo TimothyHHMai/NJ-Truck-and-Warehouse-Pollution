@@ -2,6 +2,26 @@
 
 This project maps where warehouses have grown along the NJ Turnpike corridor (Middlesex, Union, and Essex counties) using building footprints, parcel data, and aerial imagery from 2010 onward, estimates how busy they are by counting truck trailers with computer vision, and tests whether that activity is associated with higher NO2 and PM2.5 and with asthma ER visits in nearby neighborhoods, especially overburdened communities.
 
+## Project layout
+
+```
+notebooks/01_data_acquisition.ipynb     load and check the downloaded sources
+notebooks/02_warehouse_candidates.ipynb candidate buildings: footprints ≥ 20,000 sq ft, is_large ≥ 50,000 sq ft
+notebooks/03_labeling_dataset.ipynb     NAIP resolution per year, rule-based warehouse inventory, validation images
+notebooks/06_asthma_rates.ipynb         asthma ER visits per 10,000 residents by county, 2016–2024
+labeling/LABELING_GUIDE.md              rules for labeling the validation images
+labeling/label_config_*.xml             Label Studio configs: precision, recall, sites (trailer counts)
+labeling/setup_projects.py              creates the three Label Studio projects
+labeling/start_label_studio.sh          starts Label Studio at localhost:8080, serving images from data/
+data/raw/                               downloaded sources, NAIP GeoTIFFs (not in git)
+data/interim/warehouse_*.gpkg           candidate buildings and warehouse inventory
+data/interim/validation.gpkg            precision buildings, recall cells, trailer-count sites
+data/interim/chips/<project>/           validation PNGs; index.csv maps each image to its building/cell/site and map transform
+data/interim/labels/                    Label Studio JSON exports
+```
+
+`data/` lives on an external drive, not in the repo; the notebooks point to it with `DATA = Path(...)`.
+
 ## Data sources
 
 All sources are free and public. (10/19/26)

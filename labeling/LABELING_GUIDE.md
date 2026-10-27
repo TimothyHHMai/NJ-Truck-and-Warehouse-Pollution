@@ -43,6 +43,8 @@ Place one **trailer** point (`t`) on the centre of every semi-trailer **anywhere
 
 **skip_site**: if the 2022 tile has no truck yard (no dock doors or trailer parking), tick it and move on. Skip that site's older tile too. A real yard that happens to be empty that day is **not** skipped: submit it with zero points. Aim for ~30 kept sites.
 
+Only the 2022 tile decides whether a site is skipped. If the 2022 tile is kept, label the older tile normally: if the warehouse wasn't built yet, submit it with zero points rather than skipping it.
+
 **1 m years (2010, 2015):** trailers are ~3 px wide. Count what you can, and tick **uncertain** if a lot of it is guesswork. Seeing how much worse 1 m counts are is part of the point.
 
 ## Flags
