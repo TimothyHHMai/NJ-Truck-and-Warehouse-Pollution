@@ -5,19 +5,24 @@ This project maps where warehouses have grown along the NJ Turnpike corridor (Mi
 ## Project layout
 
 ```
-notebooks/01_data_acquisition.ipynb     load and check the downloaded sources
-notebooks/02_warehouse_candidates.ipynb candidate buildings: footprints ≥ 20,000 sq ft, is_large ≥ 50,000 sq ft
-notebooks/03_labeling_dataset.ipynb     NAIP resolution per year, rule-based warehouse inventory, validation images
-notebooks/06_asthma_rates.ipynb         asthma ER visits per 10,000 residents by county, 2016–2024
-labeling/LABELING_GUIDE.md              rules for labeling the validation images
-labeling/label_config_*.xml             Label Studio configs: precision, recall, sites (trailer counts)
-labeling/setup_projects.py              creates the three Label Studio projects
-labeling/start_label_studio.sh          starts Label Studio at localhost:8080, serving images from data/
-data/raw/                               downloaded sources, NAIP GeoTIFFs (not in git)
-data/interim/warehouse_*.gpkg           candidate buildings and warehouse inventory
-data/interim/validation.gpkg            precision buildings, recall cells, trailer-count sites
-data/interim/chips/<project>/           validation PNGs; index.csv maps each image to its building/cell/site and map transform
-data/interim/labels/                    Label Studio JSON exports
+.
+├── notebooks/
+│   ├── 01_data_acquisition.ipynb       load and check the downloaded sources
+│   ├── 02_warehouse_candidates.ipynb   candidate buildings: footprints ≥ 20,000 sq ft, is_large ≥ 50,000 sq ft
+│   ├── 03_labeling_dataset.ipynb       NAIP resolution per year, rule-based warehouse inventory, validation images
+│   └── 06_asthma_rates.ipynb           asthma ER visits per 10,000 residents by county, 2016–2024
+├── labeling/
+│   ├── LABELING_GUIDE.md               rules for labeling the validation images
+│   ├── label_config_*.xml              Label Studio configs: precision, recall, sites (trailer counts)
+│   ├── setup_projects.py               creates the three Label Studio projects
+│   └── start_label_studio.sh           starts Label Studio at localhost:8080, serving images from data/
+└── data/                               on an external drive, not in git
+    ├── raw/                            downloaded sources, NAIP GeoTIFFs
+    └── interim/
+        ├── warehouse_*.gpkg            candidate buildings and warehouse inventory
+        ├── validation.gpkg             precision buildings, recall cells, trailer-count sites
+        ├── chips/<project>/            validation PNGs; index.csv maps each image to its building/cell/site and map transform
+        └── labels/                     Label Studio JSON exports
 ```
 
 `data/` lives on an external drive, not in the repo; the notebooks point to it with `DATA = Path(...)`.
