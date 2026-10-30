@@ -10,6 +10,7 @@ This project maps where warehouses have grown along the NJ Turnpike corridor (Mi
 │   ├── 01_data_acquisition.ipynb       load and check the downloaded sources
 │   ├── 02_warehouse_candidates.ipynb   candidate buildings: footprints ≥ 20,000 sq ft, is_large ≥ 50,000 sq ft
 │   ├── 03_labeling_dataset.ipynb       NAIP resolution per year, rule-based warehouse inventory, validation images
+│   ├── 04_inventory_eda.ipynb          inventory sizes, clustering near the Turnpike, year built
 │   └── 06_asthma_rates.ipynb           asthma ER visits per 10,000 residents by county, 2016–2024
 ├── labeling/
 │   ├── LABELING_GUIDE.md               rules for labeling the validation images
